@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: 'homes#top'
+  get 'homes/about'
   get 'users/index'
   get 'users/show'
   get 'users/edit'
