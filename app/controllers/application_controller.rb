@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
 
   # devise のストロングパラメータはここに記入
   protected
-  # sign up の時　パラメータname を許可する
+  # sign up の時　パラメータemail を許可する
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
   end
 end
