@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   # sign in時の移行先
   def after_sign_in_path_for(resource)
-    users_show_path
+    users_show_path(resource.id)
   end
   # sign out 時の移行先
   def after_sign_out_path_for(resource)
