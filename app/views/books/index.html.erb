@@ -26,7 +26,11 @@
           <% @books.each do |book| %>
               <tr>
                 <td><%= image_tag book.user.get_profile_image(100,100), class: "mt-3 rounded-circle"; %></td>
-                <td>タイトル <%= book.title %></td>
+                <td>
+                  <%= link_to book_path(book.id) do %>
+                    ☆<%= book.title %>
+                  <% end %> 
+                </td>
                 <td>opinion<%= book.body %></td>
               </tr>
           <% end %>    
