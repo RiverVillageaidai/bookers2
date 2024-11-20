@@ -1,2 +1,41 @@
 <h1>Books#show</h1>
 <p>Find me in app/views/books/show.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <%# 画面左側----------------------------------------------------------------------------------------------------- %>
+    <div class="col-md-3">
+      <%# <%= render [部分テンプレートファイルの指定], [ローカル変数]:[渡す値] % > %>
+      <%= render 'shared/sidebar' %>
+    </div>
+
+    <%# 画面右側------------------------------------------------------------------------------------------------------------------------------- %>
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table">
+
+        <tbody>
+          <%# ここに繰り返し要素を入れてデータを読み込む %>
+
+          <% @books.each do |book| %>
+              <tr>
+                <td><%= image_tag book.user.get_profile_image(100,100), class: "mt-3 rounded-circle"; %></td>
+                <td>タイトル <%= book.title %></td>
+                <td>opinion<%= book.body %></td>
+                <td>edit</td>
+                <td>
+                  <% if book.user == current_user %>
+                    <%= link_to "Destroy", book_path(@books), method: :delete %>
+                  <% end %>
+                </td>
+              </tr>
+          <% end %>    
+        </tbody>
+            
+          
+          
+        
+      </table>
+    </div>
+  </div>
+</div>
