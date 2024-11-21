@@ -15,17 +15,18 @@
       <table class="table">
 
         <tbody>
-          
+
           <tr>
            <td><%= image_tag @book.user.get_profile_image(100,100), class: "mt-3 rounded-circle"; %></td>
            <td>タイトル <%= @book.title %></td>
            <td>opinion<%= @book.body %></td>
-           <td>edit</td>
-           <td>
-             <% if @book.user == current_user %>
-                <%= link_to "Destroy", book_path(@book), method: :delete %>
-             <% end %>
-            </td>
+           
+           
+           <% if @book.user == current_user %>
+            <td><%= link_to "Edit", edit_book_path(@book) %></td>
+            <td><%= link_to "Destroy", book_path(@book), method: :delete %></td>
+           <% end %>
+            
           </tr>
            
         </tbody>
