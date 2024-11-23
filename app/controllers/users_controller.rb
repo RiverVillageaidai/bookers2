@@ -21,9 +21,9 @@ class UsersController < ApplicationController
 
   private
 
-  # def user_params
-    # params.require(:user).permit(:name, :profile_image)
-  # end
+  def user_params
+      params.require(:user).permit(:name, :profile_image, :introduction)
+  end
 
   # ログインしているユーザー以外の情報は編集できないようにする
   # def is_matching_login_user
