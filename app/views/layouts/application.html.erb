@@ -28,7 +28,7 @@
           <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li>
-                <a class="nav-link text-light" href="/" >
+                <a class="nav-link text-light" href="<%= user_path(current_user.id) %>" >
                   "Home"
                 </a>
               </li>
