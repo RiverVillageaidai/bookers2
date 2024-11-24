@@ -86,17 +86,6 @@
     <p id ="notice"><%= flash[:notice] %></p>
     <p id ="alert"><%= flash[:alert] %></p>
 
-    <%# エラー表示  変数：error%>
-    <% if error.errors.any? %>
-      <%= error.errors.count %>errors prohibited this obj from being saved:
-      <ul>
-        <% error.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    <% end %>
-
-
     <%= yield %>
 
     <footer>

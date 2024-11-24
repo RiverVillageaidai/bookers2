@@ -7,8 +7,12 @@ class User < ApplicationRecord
   # 画像追加
   has_one_attached :profile_image
 
+  # アソシエーション
   has_many :books, dependent: :destroy
 
+   # バリデーション
+   validates :name, presence: true, uniqueness: true,  length: { minimum: 2, maximum: 20 }
+   validates :introduction, length: { maximum: 50 }
 
   # ユーザー画像読み込みメソッド
   def get_profile_image(width, height)

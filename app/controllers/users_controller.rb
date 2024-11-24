@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       flash[:alert] = ""
       redirect_to user_path(@user.id)
     else
+      
       render :edit
     end
   end
