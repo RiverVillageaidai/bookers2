@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # ログインしていない状態で　トップページ以外にアクセスすると　ログインページに
-  before_action :authenticate_user!, except: [:top]
+  before_action :authenticate_user!, except: [:top, :about]
 
   # devise利用の機能前に　protected に記述されている　configure_permitted_parameters を処理
   before_action :configure_permitted_parameters, if: :devise_controller?
