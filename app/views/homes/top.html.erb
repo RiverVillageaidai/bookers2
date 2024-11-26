@@ -2,10 +2,23 @@
 <%# Find me in app/views/homes/top.html.erb %>
 <div class="container">
   <div class=row>
-    <div class col mx-auto>
-        <h1>welcome to<strong>Bookers!!</strong></h1>
+    <%# mx-auto:中央揃え %>
+    <%# col-11: すべての画面幅で要素がグリッドの12分割中11列分の幅 %>
+    <%# col-sm-10: smサイズ、576px以上 では、要素が10列分の幅 %>
+    <%# col-lg-8: lgサイズ、992px以上では、要素が8列分の幅%>
+    <%# col-xl-6  xlサイズ、1200px以上では、要素が6列分の幅%>
+    <div class mx-auto col-11 col-sm-10 col-lg-8 col-xl-6>
+        <h1>
+          welcome to
+          <i class="fa-solid fa-book"></i>
+          <strong>Bookers!!</strong>
+        </h1>
 
-        <p>in <strong>Bookers</strong></p>
+        <p>
+          in
+          <i class="fa-solid fa-book"></i> 
+          <strong>Bookers,</strong>
+        </p>
         <p>you can share and exchange your opinions , inpressions , and emotions</p>
         <p>about various books!</p>
 
