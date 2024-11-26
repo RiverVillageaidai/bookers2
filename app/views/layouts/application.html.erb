@@ -32,25 +32,29 @@
             <% if user_signed_in? %>
               <li>
                 <a class="nav-link text-light" href="<%= user_path(current_user.id) %>" >
-                  "Home"
+                  <i class="fa-solid fa-house"></i>
+                  Home
                 </a>
               </li>
 
               <li>
                 <a class="nav-link text-light" href="/users">
-                  "Users"
+                  <i class="fa-solid fa-users"></i>
+                  Users
                 </a>  
               </li>
 
               <li>
                 <a class="nav-link text-light" href="/books">
-                  "Books"
+                  <i class="fa-solid fa-book-open"></i>
+                  Books
                 </a> 
               </li>
               <%# メソッドを指定したいならこうやって書く %>
               <li>
                 <%= link_to  destroy_user_session_path, method: :delete, class:"nav-link text-light" do%>
-                  "Log out"
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  Log out
                 <%end%>
                 
                 
@@ -58,23 +62,27 @@
             <% else %>
               <li>
                 <a class="nav-link text-light" href="/" >
-                  "Home"
+                  <i class="fa-solid fa-house"></i>
+                  Home
                 </a>
               </li>
               <li>
                 <a class="nav-link text-light" href="/homes/about" >
-                  "About"
+                  <i class="fa-solid fa-link"></i>
+                  About
                 </a>
               </li>
 
               <li>
                 <a class="nav-link text-light" href="<%= new_user_registration_path %>" >
-                  "Sign up"
+                  <i class="fa-solid fa-user-plus"></i>
+                  Sign up
                 </a>
               </li>
               <li>
                 <a class="nav-link text-light" href="<%= new_user_session_path %>" >
-                  "Log in"
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                  Log in
                 </a>
               </li>
             <% end %>
@@ -92,10 +100,10 @@
     <%= yield %>
 
     <footer>
-      <div class="container">
+      <div class="container mt-5">
         <div class="row">
-          <div class="col text-center">
-            CopyRight Infratop.inc
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
           </div>
         </div>
       </div>
