@@ -27,14 +27,14 @@
           <% @books.each do |book| %>
             <% if book.user_id == @user.id %>  
               <tr>
-                <td><%= image_tag book.user.get_profile_image(100,100) %></td>
-                <%# ユーザーが投稿したbookのみ表示したい %>
+                <td><%= image_tag book.user.get_profile_image(80,80) %></td>
+                
                 <td>
                   <%= link_to book_path(book.id) do %>
-                    ☆<%= book.title %>  
+                    <%= book.title %>  
                   <% end %> 
                 </td>
-                <td>opinion<%= book.body %></td>
+                <td><%= book.body %></td>
               </tr>
             <% end %>  
           <% end %>    
