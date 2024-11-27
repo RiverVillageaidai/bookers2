@@ -12,16 +12,26 @@ class BooksController < ApplicationController
         redirect_to book_path(@book.id)
       else
         @books = Book.all
+
+        # _sidebar用
+        @user = User.find(current_user.id)
+        
         render :index
       end
   end
 
   def index
     @books = Book.all
+
+    # _sidebar用
+    @user = User.find(current_user.id)
   end
 
   def show
     @book = Book.find(params[:id])
+
+    # _sidebar用
+    @user = User.find(@book.user_id)
   end
 
   def edit
